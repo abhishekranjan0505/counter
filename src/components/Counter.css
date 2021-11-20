@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+.top {
+  height: 12px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.top .saving {
+  display: flex;
+  align-items: center;
+}
+
+.top p {
+  margin: 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.top .loader {
+  margin: 0 10px 0 3px;
+  border-radius: 50%;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px dashed #000000;
+  border-right: 1px dashed #000000;
+
+  width: 16px;
+  height: 16px;
+  animation: spin 1.6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  height: 56px;
+}
+
+.counter button {
+  border: none;
+  font-size: 21px;
+  width: 60px;
+  height: 100%;
+  border: 1px solid #b24242;
+  background-color: #ffffff;
+  font-weight: 900;
+}
+.counter button:nth-of-type(1) {
+  border-radius: 8px 0px 0px 8px;
+  color: #b24242;
+}
+.counter button:nth-of-type(2) {
+  border-radius: 0px 8px 8px 0px;
+  background-color: #b24242;
+  color: white;
+}
+
+.counter input {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 900;
+  background-color: rgba(178, 66, 66, 0.15);
+  color: #b24242;
+  padding: 0px;
+  border: none;
+  width: 60px;
+  height: 100%;
+  border-top: 1px solid #b24242;
+  border-bottom: 1px solid #b24242;
+  outline: none;
+  font-family: Avenir;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
