@@ -63,7 +63,7 @@ const Counter = ({ setCountInParent }) => {
         setFetching(false);
         setCountInParent(c);
       });
-  }, []);
+  }, [setCountInParent]);
 
   useEffect(() => {
     if (!fetching) {
@@ -73,7 +73,7 @@ const Counter = ({ setCountInParent }) => {
       });
     }
     setCountInParent(count);
-  }, [count]);
+  }, [count, setCountInParent, fetching]);
 
   return (
     <div className="container">
