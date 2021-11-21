@@ -13,19 +13,23 @@ const updateCount = async (count) => {
   }
   controllerFn = controller;
 
-  await fetch(
-    "https://interview-8e4c5-default-rtdb.firebaseio.com/front-end.json",
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        abhishek: count,
-      }),
-      signal: controller.signal,
-    }
-  );
+  try {
+    await fetch(
+      "https://interview-8e4c5-default-rtdb.firebaseio.com/front-end.json",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          abhishek: count,
+        }),
+        signal: controller.signal,
+      }
+    );
+  } catch (error) {
+    console.log("previous request cancelled");
+  }
 };
 
 const fetchCount = async () => {
@@ -73,7 +77,8 @@ const Counter = ({ setCountInParent }) => {
       });
     }
     setCountInParent(count);
-  }, [count, setCountInParent, fetching]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [count, setCountInParent]);
 
   return (
     <div className="container">

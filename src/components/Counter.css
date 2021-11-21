@@ -53,6 +53,8 @@
 
 .counter button {
   border: none;
+  cursor: pointer;
+  outline: none;
   font-size: 21px;
   width: 60px;
   height: 100%;
